@@ -1,7 +1,11 @@
+<div class="navbar px-3 bg-light">
 <h2>Restaurants</h2>
-<ul>
-<% @restaurants.each do |restaurant|%>
-<li><%= link_to restaurant.name, restaurant_path(restaurant.id) %></li>
+<%= link_to "Add new", new_restaurant_path, class:"text-decoration-none" %>
+</div>
+<div class="container">
+<ul class="list-unstyled pt-5">
+<% @restaurants.each do |restaurant| %>
+<li class="p-3"><%= link_to restaurant.name, restaurant_path(restaurant.id), class:"text-decoration-none"%></li>
 <% end %>
 </ul>
-<%= link_to "Add new restaurant", new_restaurant_path %>
+</div>
