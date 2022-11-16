@@ -2,13 +2,15 @@
 <h4><%= @restaurant.address %></h4>
 <h4><%= @restaurant.category.capitalize %></h4>
 
-<h4>Reviews</h4>
+<h5>Reviews</h5>
 <ul>
 <% @restaurant.reviews.each do |review| %>
 <li><%= review.content %></li>
 <li><%= "#{review.rating} stars" %></li>
 <% end %>
 </ul>
-<%= link_to "Leave a review", new_restaurant_review_path(@restaurant) %>
+
+<%= render "/reviews/form" %>
+<%# <%= link_to "Leave a review", new_restaurant_review_path(@restaurant) %> 
 <br>
 <%= link_to "Back", restaurants_path %>
